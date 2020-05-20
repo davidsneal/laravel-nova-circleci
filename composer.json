@@ -1,0 +1,29 @@
+{
+    "name": "davidsneal/laravel-nova-circleci",
+    "description": "Trigger CircleCI Pipelines as 'Deployments' from Laravel Nova.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Davidsneal\\LaravelNovaCircleci\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Davidsneal\\LaravelNovaCircleci\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
