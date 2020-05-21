@@ -23,6 +23,8 @@ class ToolServiceProvider extends ServiceProvider
             $this->routes();
         });
 
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-nova-circleci.php'),
@@ -46,8 +48,9 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/laravel-nova-circleci')
-                ->group(__DIR__.'/../routes/api.php');
+            ->namespace('\Davidsneal\LaravelNovaCircleci\Http\Controllers')
+            ->prefix('nova-vendor/laravel-nova-circleci')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
