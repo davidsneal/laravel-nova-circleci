@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/deploy', 'TriggerPipeline');
+Route::get('/deploy/{notes}', 'TriggerPipeline');
 Route::get('/can', 'CanTriggerPipeline');
 Route::get('/pipelines', 'GetLatestPipelines');
 Route::get('/pipelines/{pipeline:pipeline_id}', 'GetPipeline');

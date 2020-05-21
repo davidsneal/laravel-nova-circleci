@@ -163,7 +163,7 @@ export default {
 
       this.deploying = true
 
-      Nova.request(`/nova-vendor/laravel-nova-circleci/deploy?notes=${this.notes}`)
+      Nova.request(`/nova-vendor/laravel-nova-circleci/deploy/${this.notes}`)
         .then(() => {
           Nova.success('Deployment initiated successfully')
           this.init()
