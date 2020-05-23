@@ -16,7 +16,7 @@ class TriggerPipeline extends Controller
      */
     public function __invoke($notes)
     {
-        $response = Http::post('https://circleci.com/api/v2/project/github/'.config('laravel-nova-circleci.username').'/'.config('laravel-nova-circleci.project').'/pipeline?circle-token='.config('laravel-nova-circleci.token'), config('laravel-nova-circleci.parameters'));
+        $response = Http::post('https://circleci.com/api/v2/project/'.config('laravel-nova-circleci.vcs').'/'.config('laravel-nova-circleci.username').'/'.config('laravel-nova-circleci.project').'/pipeline?circle-token='.config('laravel-nova-circleci.token'), config('laravel-nova-circleci.parameters'));
 
         $json = $response->json();
 
