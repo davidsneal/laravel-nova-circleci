@@ -32,6 +32,7 @@ class Pipeline extends Model
      */
     public function user()
     {
-        return $this->belongsTo(config('laravel-nova-circleci.user_model'), 'user_id', 'id');
+        return $this->belongsTo(config('laravel-nova-circleci.user_model'), 'user_id', 'id')
+            ->withTrashed();
     }
 }
